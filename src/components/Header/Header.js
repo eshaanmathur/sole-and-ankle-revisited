@@ -1,11 +1,10 @@
 import React from 'react';
 import styled from 'styled-components/macro';
-
-import { BREAKPOINTS, COLORS, WEIGHTS } from '../../constants';
-import Logo from '../Logo';
-import SuperHeader from '../SuperHeader';
-import MobileMenu from '../MobileMenu';
+import { COLORS, QUERIES, WEIGHTS } from '../../constants';
 import Icon from '../Icon';
+import Logo from '../Logo';
+import MobileMenu from '../MobileMenu';
+import SuperHeader from '../SuperHeader';
 import UnstyledButton from '../UnstyledButton';
 import VisuallyHidden from '../VisuallyHidden';
 
@@ -55,16 +54,16 @@ const MainHeader = styled.div`
     display: flex;
     align-items: baseline;
     padding: 18px 32px;
-    border-bottom: 1px solid ${COLORS.gray[300]};
+    border-bottom: 1px solid var(--color-gray-300);
     overflow: auto;
 
-    @media (max-width: ${BREAKPOINTS.tablet}) {
-        border-top: 4px solid ${COLORS.gray[900]};
+    @media (${QUERIES.tabletAndSmaller}) {
+        border-top: 4px solid var(--color-gray-900);
         justify-content: space-between;
         align-items: center;
     }
 
-    @media (max-width: ${BREAKPOINTS.phone}) {
+    @media (${QUERIES.phoneAndSmaller}) {
         padding: 18px 16px;
     }
 `;
@@ -74,7 +73,7 @@ const DesktopNav = styled.nav`
     gap: clamp(1rem, 9.2vw - 4.5rem, 3.5rem);
     margin: 0px 48px;
 
-    @media (max-width: ${BREAKPOINTS.tablet}) {
+    @media (${QUERIES.tabletAndSmaller}) {
         display: none;
     }
 `;
@@ -82,14 +81,14 @@ const DesktopNav = styled.nav`
 const LogoWrapper = styled.div`
     flex: 1;
 
-    @media (max-width: ${BREAKPOINTS.tablet}) {
+    @media (${QUERIES.tabletAndSmaller}) {
         flex: revert;
     }
 `;
 const Filler = styled.div`
     flex: 1;
 
-    @media (max-width: ${BREAKPOINTS.tablet}) {
+    @media (${QUERIES.tabletAndSmaller}) {
         display: none;
     }
 `;
@@ -98,11 +97,11 @@ const MobileAction = styled.div`
     justify-content: var(--justify-content, flex-start);
     gap: 32px;
 
-    @media (max-width: ${BREAKPOINTS.tablet}) {
+    @media (${QUERIES.tabletAndSmaller}) {
         display: flex;
     }
 
-    @media (max-width: ${BREAKPOINTS.phone}) {
+    @media (${QUERIES.phoneAndSmaller}) {
         gap: 16px;
     }
 `;
@@ -111,11 +110,11 @@ const NavLink = styled.a`
     font-size: 1.125rem;
     text-transform: uppercase;
     text-decoration: none;
-    color: ${COLORS.gray[900]};
+    color: var(--color-gray-900);
     font-weight: ${WEIGHTS.medium};
 
     &:first-of-type {
-        color: ${COLORS.secondary};
+        color: var(--color-secondary);
     }
 `;
 

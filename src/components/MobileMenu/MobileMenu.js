@@ -23,9 +23,7 @@ const MobileMenu = ({ isOpen, onDismiss }) => {
                 </Button>
                 <Filler />
                 <PrimaryNav>
-                    <a style={{ '--color': COLORS.secondary }} href="/sale">
-                        Sale
-                    </a>
+                    <a href="/sale">Sale</a>
                     <a href="/new">New&nbsp;Releases</a>
                     <a href="/men">Men</a>
                     <a href="/women">Women</a>
@@ -59,7 +57,7 @@ const Overlay = styled(DialogOverlay)`
     left: 0;
     width: 100%;
     height: 100%;
-    background: hsl(220deg 5% 40% / 0.8);
+    background: var(--color-overlay-bg);
     display: flex;
     justify-content: flex-end;
 `;
@@ -67,7 +65,7 @@ const Overlay = styled(DialogOverlay)`
 const Content = styled(DialogContent)`
     width: 300px;
     height: 100%;
-    background-color: ${COLORS.white};
+    background-color: var(--color-white);
     display: flex;
     flex-direction: column;
     padding: 32px;
@@ -79,12 +77,16 @@ const PrimaryNav = styled.nav`
     gap: 22px;
 
     a {
-        color: var(--color, ${COLORS.gray['900']});
+        color: var(--color-gray-900);
         text-transform: uppercase;
         font-weight: 600;
         text-decoration: none;
         font-size: 1.125rem;
         line-height: 1.16;
+    }
+
+    a:first-of-type {
+        color: var(--color-secondary);
     }
 `;
 
@@ -93,7 +95,7 @@ const FooterNav = styled.footer`
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    color: ${COLORS.gray['700']};
+    color: var(--color-gray-700);
     gap: 14px;
 
     a {

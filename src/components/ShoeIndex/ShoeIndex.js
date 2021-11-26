@@ -1,13 +1,10 @@
-import React from 'react';
 import styled from 'styled-components/macro';
-
-import { BREAKPOINTS, WEIGHTS } from '../../constants';
-
+import { QUERIES, WEIGHTS } from '../../constants';
 import Breadcrumbs from '../Breadcrumbs';
 import Select from '../Select';
-import Spacer from '../Spacer';
-import ShoeSidebar from '../ShoeSidebar';
 import ShoeGrid from '../ShoeGrid';
+import ShoeSidebar from '../ShoeSidebar';
+import Spacer from '../Spacer';
 
 const ShoeIndex = ({ sortId, setSortId }) => {
     return (
@@ -56,13 +53,13 @@ const Wrapper = styled.div`
 
 const LeftColumn = styled.div`
     flex-basis: 248px;
-    @media (max-width: ${BREAKPOINTS.tablet}) {
+    @media (${QUERIES.tabletAndSmaller}) {
         display: none;
     }
 `;
 
 const BreadcrumbsTitleWrapper = styled.div`
-    @media (max-width: ${BREAKPOINTS.tablet}) {
+    @media (${QUERIES.tabletAndSmaller}) {
         display: flex;
         flex-direction: column;
     }
@@ -70,13 +67,13 @@ const BreadcrumbsTitleWrapper = styled.div`
 
 const BreadcrumbsWrapper = styled.div`
     display: none;
-    @media (max-width: ${BREAKPOINTS.tablet}) {
+    @media (${QUERIES.tabletAndSmaller}) {
         display: revert;
     }
 `;
 
 const SelectWrapper = styled.div`
-    @media (max-width: ${BREAKPOINTS.phone}) {
+    @media (${QUERIES.phoneAndSmaller}) {
         display: none;
     }
 `;

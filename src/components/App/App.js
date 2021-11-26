@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components/macro';
-import { BREAKPOINTS } from '../../constants';
+import { BREAKPOINTS, QUERIES } from '../../constants';
 
 import Header from '../Header';
 import ShoeIndex from '../ShoeIndex';
@@ -21,10 +21,10 @@ const App = () => {
 const Main = styled.main`
     padding: 64px 32px;
 
-    @media (max-width: ${BREAKPOINTS.tablet}) {
+    @media (${QUERIES.tabletAndSmaller}) {
         padding: 48px 32px;
     }
-    @media (max-width: ${BREAKPOINTS.phone}) {
+    @media (${QUERIES.phoneAndSmaller}) {
         padding: 48px 16px;
     }
 `;
