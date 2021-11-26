@@ -16,11 +16,12 @@ const MobileMenu = ({ isOpen, onDismiss }) => {
 
     return (
         <Overlay isOpen={isOpen} onDismiss={onDismiss}>
-            <StyledDialogContent>
-                <UnstyledButton onClick={onDismiss}>
+            <Content>
+                <Button onClick={onDismiss}>
                     <VisuallyHidden>Dismiss menu</VisuallyHidden>
                     <Icon id={'close'} />
-                </UnstyledButton>
+                </Button>
+                <Filler />
                 <PrimaryNav>
                     <a style={{ '--color': COLORS.secondary }} href="/sale">
                         Sale
@@ -36,10 +37,21 @@ const MobileMenu = ({ isOpen, onDismiss }) => {
                     <a href="/privacy">Privacy Policy</a>
                     <a href="/contact">Contact Us</a>
                 </FooterNav>
-            </StyledDialogContent>
+            </Content>
         </Overlay>
     );
 };
+
+const Filler = styled.div`
+    flex: 1;
+`;
+
+const Button = styled(UnstyledButton)`
+    position: absolute;
+    top: 10px;
+    right: 0px;
+    padding: 16px;
+`;
 
 const Overlay = styled(DialogOverlay)`
     position: absolute;
@@ -52,18 +64,13 @@ const Overlay = styled(DialogOverlay)`
     justify-content: flex-end;
 `;
 
-const StyledDialogContent = styled(DialogContent)`
-    width: 80%;
+const Content = styled(DialogContent)`
+    width: 300px;
     height: 100%;
     background-color: ${COLORS.white};
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    padding: 32px 16px 32px 32px;
-
-    & ${UnstyledButton} {
-        align-self: flex-end;
-    }
+    padding: 32px;
 `;
 
 const PrimaryNav = styled.nav`
@@ -82,8 +89,10 @@ const PrimaryNav = styled.nav`
 `;
 
 const FooterNav = styled.footer`
+    flex: 1;
     display: flex;
     flex-direction: column;
+    justify-content: flex-end;
     color: ${COLORS.gray['700']};
     gap: 14px;
 

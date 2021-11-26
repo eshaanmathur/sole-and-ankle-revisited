@@ -9,28 +9,16 @@ import Icon from '../Icon';
 
 const SuperHeader = () => {
     return (
-        <>
-            <Wrapper>
-                <MarketingMessage>Free shipping on domestic orders over $75!</MarketingMessage>
-                <SearchInput />
-                <HelpLink href="/help">Help</HelpLink>
-                <UnstyledButton>
-                    <Icon id="shopping-bag" strokeWidth={1} />
-                </UnstyledButton>
-            </Wrapper>
-            <Line />
-        </>
+        <Wrapper>
+            <MarketingMessage>Free shipping on domestic orders over $75!</MarketingMessage>
+            <SearchInput />
+            <HelpLink href="/help">Help</HelpLink>
+            <UnstyledButton>
+                <Icon id="shopping-bag" strokeWidth={1} />
+            </UnstyledButton>
+        </Wrapper>
     );
 };
-
-const Line = styled.div`
-    display: none;
-
-    @media (max-width: ${BREAKPOINTS.tablet}) {
-        display: block;
-        border: 2px solid ${COLORS.gray[900]};
-    }
-`;
 
 const Wrapper = styled.div`
     display: flex;
