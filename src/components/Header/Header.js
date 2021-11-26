@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components/macro';
-import { COLORS, QUERIES, WEIGHTS } from '../../constants';
+import { QUERIES, WEIGHTS } from '../../constants';
 import Icon from '../Icon';
 import Logo from '../Logo';
 import MobileMenu from '../MobileMenu';

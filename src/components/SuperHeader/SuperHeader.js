@@ -1,5 +1,5 @@
 import styled from 'styled-components/macro';
-import { COLORS, QUERIES } from '../../constants';
+import { QUERIES } from '../../constants';
 import Icon from '../Icon';
 import SearchInput from '../SearchInput';
 import UnstyledButton from '../UnstyledButton';
