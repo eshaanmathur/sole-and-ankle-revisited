@@ -48,7 +48,12 @@ const Button = styled(UnstyledButton)`
     position: absolute;
     top: 10px;
     right: 0px;
-    padding: 16px;
+    padding: 18px 32px;
+
+    @media (${QUERIES.phoneAndSmaller}) {
+        top: 12px;
+        padding: 16px;
+    }
 `;
 
 const Overlay = styled(DialogOverlay)`
